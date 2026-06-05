@@ -19,7 +19,7 @@ export async function GET(
       return NextResponse.json({ error: 'Movie not found' }, { status: 404 })
     }
 
-    const genreIds = movie.genres.map((g) => g.genreId)
+    const genreIds = movie.genres.map((g: { genreId: string }) => g.genreId)
 
     const similarMovies = await prisma.movie.findMany({
       where: {
