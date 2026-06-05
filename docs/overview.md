@@ -1,37 +1,3 @@
-## Project Name Ideas
-
-### Professional
-
-* **CineMirror**
-* **StreamVault**
-* **MovieHub Pro**
-* **FilmSync**
-* **CinemaIndex**
-* **ReelVault**
-* **MovieAtlas**
-* **StreamDirectory**
-
-### Startup-Style
-
-* **WatchNest**
-* **FlickBase**
-* **ScreenFlow**
-* **MovieGrid**
-* **ReelRadar**
-* **StreamScope**
-* **CineVerse**
-* **FilmDock**
-
-### My Top Picks
-
-1. **MovieAtlas** — a searchable map of movies across sources.
-2. **ReelRadar** — tracks and indexes content automatically.
-3. **CineMirror** — mirrors movie metadata from external sources.
-4. **StreamScope** — focuses on discovery and indexing.
-5. **MovieGrid** — clean, scalable, modern.
-
----
-
 # Project Overview
 
 Build a **Movie Aggregator & Indexing Platform**.
@@ -255,8 +221,8 @@ Example:
 
 ```ts
 cron.schedule("0 */6 * * *", async () => {
-   await scrapeMovies()
-})
+  await scrapeMovies();
+});
 ```
 
 ---
@@ -294,10 +260,10 @@ features/
 Example:
 
 ```ts
-getMovies
-getMovie
-getGenres
-searchMovies
+getMovies;
+getMovie;
+getGenres;
+searchMovies;
 ```
 
 ---
@@ -341,10 +307,10 @@ Even without a separate backend:
 
 Features:
 
-* Trigger scraper
-* Re-index movies
-* Delete broken records
-* View scrape logs
+- Trigger scraper
+- Re-index movies
+- Delete broken records
+- View scrape logs
 
 Protected with:
 
@@ -391,7 +357,7 @@ Generate:
 Metadata:
 
 ```ts
-generateMetadata()
+generateMetadata();
 ```
 
 ---
@@ -414,7 +380,7 @@ Revalidation
 Example:
 
 ```ts
-revalidate = 3600
+revalidate = 3600;
 ```
 
 ---
@@ -423,40 +389,40 @@ revalidate = 3600
 
 ### Phase 1
 
-* Setup Next.js
-* Setup Prisma
-* Setup PostgreSQL
-* Setup Shadcn UI
+- Setup Next.js
+- Setup Prisma
+- Setup PostgreSQL
+- Setup Shadcn UI
 
 ### Phase 2
 
-* Create database schema
-* Build scraper
-* Store movies
+- Create database schema
+- Build scraper
+- Store movies
 
 ### Phase 3
 
-* Homepage
-* Search
-* Pagination
-* Movie details
+- Homepage
+- Search
+- Pagination
+- Movie details
 
 ### Phase 4
 
-* RTK Query
-* Admin dashboard
-* Auto updates
+- RTK Query
+- Admin dashboard
+- Auto updates
 
 ### Phase 5
 
-* SEO
-* Analytics
-* Performance optimization
+- SEO
+- Analytics
+- Performance optimization
 
 ---
 
 ### Portfolio-Level Title
 
-**MovieAtlas — Automated Movie Discovery & Aggregation Platform**
+**StreamScope — Automated Movie Discovery & Aggregation Platform**
 
 A full-stack Next.js application that automatically indexes movie metadata from external sources, stores it in PostgreSQL, provides fast search and filtering, scheduled updates, SEO-optimized pages, and a modern streaming-platform UI built with Shadcn UI, Redux Toolkit, and RTK Query.

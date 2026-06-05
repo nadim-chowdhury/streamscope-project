@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StreamScope — Automated Movie Discovery & Aggregation Platform
 
-## Getting Started
+StreamScope is a high-performance, full-stack Next.js application designed to automatically index movie metadata from various external sources and provide users with a seamless browsing and discovery experience.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Automated Scraping**: Multi-mode scraper supporting both simple (Cheerio) and dynamic/protected (Playwright) websites.
+- **Smart Scheduling**: Background updates triggered every 6 hours via Next.js `instrumentation`.
+- **Modern User Experience**:
+    - **Infinite Scroll**: Seamless catalog browsing using RTK Query cache merging.
+    - **Advanced Search**: Real-time search with PostgreSQL Full Text Search capabilities.
+    - **Genre Filtering**: Easy navigation across different movie categories.
+    - **Cinematic Detail Pages**: Rich metadata, backdrops, and multiple watch servers.
+- **Secure Administration**:
+    - **Protected Dashboard**: Secured with NextAuth.js (v5) and Middleware.
+    - **Manual Controls**: Trigger scrapers and monitor system health from a dedicated UI.
+- **SEO & Performance**:
+    - **Dynamic Metadata**: SEO-optimized pages with OpenGraph support for better social sharing.
+    - **API Caching**: Edge-ready caching with automatic revalidation.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 15 (App Router, TypeScript)
+- **Database**: PostgreSQL with Prisma 7 (Full Text Search enabled)
+- **State Management**: Redux Toolkit & RTK Query
+- **Scraping**: Cheerio, Playwright, Axios, Zod
+- **Authentication**: NextAuth.js (v5)
+- **Styling**: Tailwind CSS, Shadcn UI
+- **Automation**: node-cron
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Architecture
 
-## Learn More
+- `app/`: Next.js App Router (Routes, API, Pages)
+- `components/`: Reusable UI components and platform-specific logic.
+- `features/api/`: RTK Query service definitions.
+- `lib/`: Core utilities (Prisma, Scraper, Auth, Scheduler).
+- `prisma/`: Database schema and migrations.
 
-To learn more about Next.js, take a look at the following resources:
+## 🏁 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone & Install**: `npm install`
+2. **Environment**: Copy `.env.example` to `.env` and configure your credentials.
+3. **Database Setup**: `npx prisma db push`
+4. **Run Development**: `npm run dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Built with precision and performance by Gemini CLI.*
