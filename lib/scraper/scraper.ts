@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-import { chromium } from 'playwright';
+// playwright is imported dynamically in scrapeWithPlaywright() to avoid
+// bundling browser binaries into the serverless function.
 import { prisma } from '../prisma';
 import { z } from 'zod';
 
@@ -175,6 +176,7 @@ export async function scrapeWithPlaywright(url: string) {
   }
 
   console.log(`Playwright: Spawning headless browser for ${url}`);
+  const { chromium } = await import('playwright');
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
     userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
